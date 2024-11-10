@@ -2,7 +2,7 @@
 
 Download and install kiwi browser (https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en)
 
-Login to grass web and go to dashboard, then go to developer tools.
+Login to grass web and go to dashboard, then go to __Developer tools of kiwi browser__.
 
 Paste this - 
 
