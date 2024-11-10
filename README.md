@@ -19,14 +19,15 @@ After Installing Termux, Make Sure You Allowed Permission Storage On Termux Sett
 > pkg update && upgrade
 > 
 > pkg install tur-repo
-> 
-? pkg install python-is-python3.10
+ 
+> pkg install python-is-python3.10
 
 > pkg install -y rust binutils
-> 
+ 
 > CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')" pip install maturin
 
 # Install Requirements - 
 
 > pip install --upgrade pip
+
 > pip install -r requirements.txt
