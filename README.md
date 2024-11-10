@@ -12,7 +12,9 @@ If you can't paste, type `allow pasting` and press Enter, then paste the line ab
 
 ## **CONFIGURE TERMUX**
 
-After Installing Termux, Make Sure You Allowed Storage Permission On Termux (device app) Settings.
+After Installing Termux, Make Sure You Allowed Storage Permission On Termux (device app) Settings. Or Run This Command In Termux -
+
+> termux-setup-storage
 
 **Install Python 3.10 -**
 
