@@ -44,6 +44,8 @@ After Installing Termux, Make Sure You Allowed Storage Permission On Termux (dev
 
 # RUN SCRIPT
 > python grassdesktop.py
+
 or
+
 > python grassnode.py
 
