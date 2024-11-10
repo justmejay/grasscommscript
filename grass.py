@@ -18,6 +18,7 @@ async def connect_to_wss(user_id):
             await asyncio.sleep(random.randint(1, 10) / 10)
             custom_headers = {
                 "User-Agent": random_user_agent,
+                "Origin": "chrome-extension://lkbnfiajjmbhnfledhphioinpickokdi"
             }
             ssl_context = ssl.create_default_context()
             ssl_context.check_hostname = False
@@ -51,8 +52,9 @@ async def connect_to_wss(user_id):
                                 "user_id": user_id,
                                 "user_agent": custom_headers['User-Agent'],
                                 "timestamp": int(time.time()),
-                                "device_type": "desktop",
-                                "version": "4.28.2",
+                                "device_type": "extension",
+                                "version": "4.26.2",
+                                "extension_id": "lkbnfiajjmbhnfledhphioinpickokdi"
                             }
                         }
                         logger.debug(auth_response)
