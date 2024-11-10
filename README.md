@@ -8,4 +8,4 @@ Go to console tab and paste this -
 
 > localStorage.getItem('userId')
 
-If you can't paste, type allow pasting and press enter then past that line.
+If you can't paste, type allow pasting and press enter then paste that line.
