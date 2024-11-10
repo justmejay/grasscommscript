@@ -43,4 +43,7 @@ After Installing Termux, Make Sure You Allowed Storage Permission On Termux (dev
 > pip install -r requirements.txt
 
 # RUN SCRIPT
-> python grass.py
+> python grassdesktop.py
+or
+> python grassnode.py
+
