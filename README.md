@@ -13,12 +13,17 @@ If you can't paste, type `allow pasting` and press Enter, then paste the line ab
 ## **CONFIGURE TERMUX**
 
 After Installing Termux, Make Sure You Allowed Permission Storage On Termux Settings.
+
 # Install Python 3.10 -
 
 > pkg update && upgrade
+> 
 > pkg install tur-repo
+> 
 ? pkg install python-is-python3.10
+
 > pkg install -y rust binutils
+> 
 > CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')" pip install maturin
 
 # Install Requirements - 
