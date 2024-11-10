@@ -17,7 +17,7 @@ After Installing Termux, Make Sure You Allowed Permission Storage On Termux Sett
 # Install Python 3.10 -
 
 > pkg update && upgrade
-> 
+ 
 > pkg install tur-repo
  
 > pkg install python-is-python3.10
