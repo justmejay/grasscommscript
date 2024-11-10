@@ -32,7 +32,7 @@ After Installing Termux, Make Sure You Allowed Storage Permission On Termux (dev
 
 > git clone https://github.com/ashtrobe/grasswoex.git
 
-# **Change directory to script folder**
+**CHANGE DIRECTORY TO SCRIPT FOLDER**
 
 > cd grasswoex
 
