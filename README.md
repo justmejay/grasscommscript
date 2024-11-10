@@ -1,6 +1,6 @@
-## **HOW TO GET GRASS USER ID**  
+## **HOW TO GET GRASS USER ID USING ANDROID DEVICE**  
 
-Download and install the [Kiwi Browser](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en).
+Download and install [Kiwi Browser](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en).
 
 Login to Grass Web and go to the dashboard, then open the Developer Tools in the Kiwi browser.
 
