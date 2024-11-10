@@ -4,16 +4,14 @@ import ssl
 import json
 import time
 import uuid
-import requests
-import shutil
+import websockets
 from loguru import logger
-from websockets_proxy import Proxy, proxy_connect
 from fake_useragent import UserAgent
 
-async def connect_to_wss(socks5_proxy, user_id):
+async def connect_to_wss(user_id):
     user_agent = UserAgent(os=['windows', 'macos', 'linux'], browsers='chrome')
     random_user_agent = user_agent.random
-    device_id = str(uuid.uuid3(uuid.NAMESPACE_DNS, socks5_proxy))
+    device_id = str(uuid.uuid4())
     logger.info(device_id)
     while True:
         try:
@@ -27,11 +25,9 @@ async def connect_to_wss(socks5_proxy, user_id):
             ssl_context.verify_mode = ssl.CERT_NONE
             urilist = ["wss://proxy.wynd.network:4444/","wss://proxy.wynd.network:4650/"]
             uri = random.choice(urilist)
-            #uri = "wss://proxy.wynd.network:4650/"
             server_hostname = "proxy.wynd.network"
-            proxy = Proxy.from_url(socks5_proxy)
-            async with proxy_connect(uri, proxy=proxy, ssl=ssl_context, server_hostname=server_hostname,
-                                     extra_headers=custom_headers) as websocket:
+            async with websockets.connect(uri, ssl=ssl_context, extra_headers=custom_headers,
+                                          server_hostname=server_hostname) as websocket:
                 async def send_ping():
                     while True:
                         send_message = json.dumps(
@@ -70,17 +66,12 @@ async def connect_to_wss(socks5_proxy, user_id):
                         await websocket.send(json.dumps(pong_response))
         except Exception as e:
             logger.error(e)
-            logger.error(socks5_proxy)
 
 
 async def main():
     #find user_id on the site in conlose localStorage.getItem('userId') (if you can't get it, write allow pasting)
     _user_id = input('Please Enter your user ID: ')
-    with open('local_proxies.txt', 'r') as file:
-            local_proxies = file.read().splitlines()
-    tasks = [asyncio.ensure_future(connect_to_wss(i, _user_id)) for i in local_proxies]
-    await asyncio.gather(*tasks)
+    await connect_to_wss(_user_id)
 
 if __name__ == '__main__':
-    #letsgo
     asyncio.run(main())
