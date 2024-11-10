@@ -28,6 +28,14 @@ After Installing Termux, Make Sure You Allowed Storage Permission On Termux (dev
  
 > CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')" pip install maturin
 
+# **GIT CLONE THIS SCRIPT**
+
+> git clone https://github.com/ashtrobe/grasswoex.git
+
+# **Change directory to script folder**
+
+> cd grasswoex
+
 **Install Requirements**
 
 > pip install --upgrade pip
