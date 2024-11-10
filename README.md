@@ -1,4 +1,4 @@
-## **HOW TO GET GRASS USER ID USING ANDROID DEVICE**  
+# **HOW TO GET GRASS USER ID USING ANDROID DEVICE**  
 
 Download and install [Kiwi Browser](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en).
 
@@ -31,3 +31,6 @@ After Installing Termux, Make Sure You Allowed Storage Permission On Termux (dev
 > pip install --upgrade pip
 
 > pip install -r requirements.txt
+
+# RUN SCRIPT
+> python grass.py
