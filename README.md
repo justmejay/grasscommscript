@@ -14,7 +14,7 @@ If you can't paste, type `allow pasting` and press Enter, then paste the line ab
 
 After Installing Termux, Make Sure You Allowed Permission Storage On Termux Settings.
 
-# Install Python 3.10 -
+**Install Python 3.10 -**
 
 > pkg update && upgrade
  
@@ -26,7 +26,7 @@ After Installing Termux, Make Sure You Allowed Permission Storage On Termux Sett
  
 > CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')" pip install maturin
 
-# Install Requirements - 
+**Install Requirements**
 
 > pip install --upgrade pip
 
