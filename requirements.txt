@@ -3,5 +3,4 @@ asyncio
 loguru
 websockets_proxy
 fake_useragent
-websockets
 websockets==12.0
