@@ -63,7 +63,8 @@ async def connect_to_wss(user_id):
                                 "extension_id": "lkbnfiajjmbhnfledhphioinpickokdi"
                             }
                         }
-                        logger.debug(auth_response)
+                        logger.debug("Connecting to Grass Server!")
+                        #logger.debug(auth_response)
                         await websocket.send_json(auth_response)
                         
                         response_auth = await websocket.receive()
@@ -108,19 +109,20 @@ async def connect_to_wss(user_id):
                                             "action": "PING",
                                             "data": {}
                                         }
-                                        logger.debug(send_ping)
+                                        #logger.debug(send_ping)
+                                        logger.debug("PING SENT")
                                         await websocket.send_json(send_ping)
                                 
                                         response_ping = await websocket.receive()
                                         message_ping = json.loads(response_ping.data)
-                                        logger.info(message_ping)
+                                        #logger.info(message_ping)
                                         
                                         if message_ping["action"] == "PONG":
                                             pong_response = {
                                                 "id": message_ping["id"],
                                                 "origin_action": "PONG"
                                             }
-                                            logger.debug(pong_response)
+                                            logger.debug("PING SUCCESS!")
                                             await websocket.send_json(pong_response)
                                             await asyncio.sleep(5)
         except Exception as e:
