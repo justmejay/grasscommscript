@@ -1,4 +1,6 @@
-# **HOW TO GET GRASS USER ID USING ANDROID DEVICE**  
+# **Forked from ashtrobe/grasswoex. Many thanks**
+
+# **HOW TO GET GRASS USER ID USING ANDROID DEVICE [COMMUNITY EDITION]**  
 
 Download and install [Kiwi Browser](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en).
 
