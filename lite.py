@@ -28,7 +28,7 @@ async def connect_to_wss(user_id):
             await asyncio.sleep(random.randint(1, 10) / 10)
             custom_headers = {
                 "User-Agent": random_user_agent,
-                "Origin": "chrome-extension://lkbnfiajjmbhnfledhphioinpickokdi
+                "Origin": "chrome-extension://lkbnfiajjmbhnfledhphioinpickokdi"
             }
             ssl_context = ssl.create_default_context()
             ssl_context.check_hostname = False
