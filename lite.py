@@ -28,13 +28,13 @@ async def connect_to_wss(user_id):
             await asyncio.sleep(random.randint(1, 10) / 10)
             custom_headers = {
                 "User-Agent": random_user_agent,
-                "Origin": "chrome-extension://ilehaonighjijnmpnagapkhpcdbhclfg"
+                "Origin": "chrome-extension://lkbnfiajjmbhnfledhphioinpickokdi"
             }
             ssl_context = ssl.create_default_context()
             ssl_context.check_hostname = False
             ssl_context.verify_mode = ssl.CERT_NONE
 
-            uri = "wss://proxy2.wynd.network:4444"
+            uri = "wss://proxy2.wynd.network:4650"
             
             # WebSocket connection via proxy using aiohttp
             connector = aiohttp.TCPConnector(ssl_context=ssl_context)
@@ -59,7 +59,7 @@ async def connect_to_wss(user_id):
                                 "timestamp": int(time.time()),
                                 "device_type": "extension",
                                 "version": "4.26.2",
-                                "extension_id": "ilehaonighjijnmpnagapkhpcdbhclfg"
+                                "extension_id": "lkbnfiajjmbhnfledhphioinpickokdi"
                             }
                         }
                         logger.debug(auth_response)
