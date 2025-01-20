@@ -17,8 +17,11 @@ If you can't paste, type `allow pasting` and press Enter, then paste the line ab
 After Installing Termux, Make Sure You Allowed Storage Permission On Termux (device app) Settings. Or Run This Command In Termux -
 
 > termux-setup-storage
+
 > pkg install git
+
 **Install Python**
+
 > pkg install python
  
 # **GIT CLONE THIS SCRIPT**
