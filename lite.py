@@ -34,7 +34,7 @@ async def connect_to_wss(user_id):
             ssl_context.check_hostname = False
             ssl_context.verify_mode = ssl.CERT_NONE
 
-            uri = "wss://proxy2.wynd.network:4444"
+            uri = "wss://proxy2.wynd.network:4650"
             
             # WebSocket connection via proxy using aiohttp
             connector = aiohttp.TCPConnector(ssl_context=ssl_context)
@@ -46,7 +46,7 @@ async def connect_to_wss(user_id):
                 
                     response = await websocket.receive()
                     message = json.loads(response.data)
-                    logger.info(message)
+                    #logger.info(message)
 
                     if message["action"] == "AUTH":
                         auth_response = {
@@ -62,12 +62,12 @@ async def connect_to_wss(user_id):
                                 "extension_id": "lkbnfiajjmbhnfledhphioinpickokdi"
                             }
                         }
-                        logger.debug(auth_response)
+                        logger.debug("Connecting to Grass Network!")
                         await websocket.send_json(auth_response)
                         
                         response_auth = await websocket.receive()
                         message_auth = json.loads(response_auth.data)
-                        logger.info(message_auth)
+                        #logger.info(message_auth)
                         
                         if message_auth["action"] == "HTTP_REQUEST":
                             headers = {
@@ -97,7 +97,7 @@ async def connect_to_wss(user_id):
                                             "body": response_body
                                         }
                                     }
-                                    logger.debug(httpreq_response)
+                                    logger.debug("Connected to Grass Network!")
                                     await websocket.send_json(httpreq_response)
                             
                                     while True:
@@ -107,19 +107,19 @@ async def connect_to_wss(user_id):
                                             "action": "PING",
                                             "data": {}
                                         }
-                                        logger.debug(send_ping)
+                                        logger.debug("Sent Ping")
                                         await websocket.send_json(send_ping)
                                 
                                         response_ping = await websocket.receive()
                                         message_ping = json.loads(response_ping.data)
-                                        logger.info(message_ping)
+                                        #logger.info(message_ping)
                                         
                                         if message_ping["action"] == "PONG":
                                             pong_response = {
                                                 "id": message_ping["id"],
                                                 "origin_action": "PONG"
                                             }
-                                            logger.debug(pong_response)
+                                            logger.debug("Ping Success!")
                                             await websocket.send_json(pong_response)
                                             await asyncio.sleep(5)
         except Exception as e:
@@ -128,6 +128,8 @@ async def connect_to_wss(user_id):
 
 async def main():
     #find user_id on the site in conlose localStorage.getItem('userId') (if you can't get it, write allow pasting)
+    print("Grass Network Community 1.25x v.1")
+    print("Forked from ashtrobe/grasswoex, Modified by justmejay")
     _user_id = input('Please Enter your user ID: ')
     await connect_to_wss(_user_id)
 
