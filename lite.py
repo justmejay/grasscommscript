@@ -25,7 +25,8 @@ async def connect_to_wss(user_id):
     logger.info(device_id)
     while True:
         try:
-            await asyncio.sleep(random.randint(1, 10) / 10)
+            #await asyncio.sleep(random.randint(1, 10) / 10) 
+            await asyncio.sleep(random.randint(1, 10)) 
             custom_headers = {
                 "User-Agent": random_user_agent,
                 "Origin": "chrome-extension://lkbnfiajjmbhnfledhphioinpickokdi"
