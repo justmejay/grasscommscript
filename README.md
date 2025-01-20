@@ -17,30 +17,19 @@ If you can't paste, type `allow pasting` and press Enter, then paste the line ab
 After Installing Termux, Make Sure You Allowed Storage Permission On Termux (device app) Settings. Or Run This Command In Termux -
 
 > termux-setup-storage
-
-**Install Python 3.10 -**
-
-> pkg update && upgrade
+> pkg install git
+**Install Python**
+> pkg install python
  
-> pkg install tur-repo
- 
-> pkg install python-is-python3.10
-
-> pkg install -y rust binutils
- 
-> CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')" pip install maturin
-
 # **GIT CLONE THIS SCRIPT**
 
 > git clone https://github.com/justmejay/grasscommscript.git
 
 **CHANGE DIRECTORY TO SCRIPT FOLDER**
 
-> cd grasswoex
+> cd grasscommscript
 
 **Install Requirements**
-
-> pip install --upgrade pip
 
 > pip install -r requirements.txt
 
