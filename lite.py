@@ -63,7 +63,7 @@ async def connect_to_wss(user_id):
                             }
                         }
                         logger.debug("Connecting to Grass Server!")
-                        #logger.debug(auth_response)
+                        logger.debug(auth_response)
                         await websocket.send_json(auth_response)
                         
                         response_auth = await websocket.receive()
@@ -98,7 +98,7 @@ async def connect_to_wss(user_id):
                                             "body": response_body
                                         }
                                     }
-                                    #logger.debug(httpreq_response)
+                                    logger.debug(httpreq_response)
                                     await websocket.send_json(httpreq_response)
                             
                                     while True:
