@@ -28,7 +28,7 @@ async def connect_to_wss(user_id):
             await asyncio.sleep(random.randint(1, 10) / 10)
             custom_headers = {
                 "User-Agent": random_user_agent,
-                "Origin": "chrome-extension://lkbnfiajjmbhnfledhphioinpickokdi"
+                "Origin": "chrome-extension://lkbnfiajjmbhnfledhphioinpickokdi
             }
             ssl_context = ssl.create_default_context()
             ssl_context.check_hostname = False
@@ -62,7 +62,6 @@ async def connect_to_wss(user_id):
                                 "extension_id": "lkbnfiajjmbhnfledhphioinpickokdi"
                             }
                         }
-                        logger.debug("Connecting to Grass Server!")
                         logger.debug(auth_response)
                         await websocket.send_json(auth_response)
                         
@@ -109,7 +108,6 @@ async def connect_to_wss(user_id):
                                             "data": {}
                                         }
                                         logger.debug(send_ping)
-                                        #logger.debug("PING SENT")
                                         await websocket.send_json(send_ping)
                                 
                                         response_ping = await websocket.receive()
@@ -121,7 +119,7 @@ async def connect_to_wss(user_id):
                                                 "id": message_ping["id"],
                                                 "origin_action": "PONG"
                                             }
-                                            logger.debug("PING SUCCESS!")
+                                            logger.debug(pong_response)
                                             await websocket.send_json(pong_response)
                                             await asyncio.sleep(5)
         except Exception as e:
@@ -130,9 +128,6 @@ async def connect_to_wss(user_id):
 
 async def main():
     #find user_id on the site in conlose localStorage.getItem('userId') (if you can't get it, write allow pasting)
-    logger.info("Forked from ashtrobe/grasswoex")
-    logger.info("Modified by justmejay")
-    logger.info("Grass Community Edition Script v.1.0")
     _user_id = input('Please Enter your user ID: ')
     await connect_to_wss(_user_id)
 
