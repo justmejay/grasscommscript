@@ -121,8 +121,7 @@ async def connect_to_wss(user_id):
                                             }
                                             logger.debug("Ping Success!")
                                             await websocket.send_json(pong_response)
-                                            logger.info("Sleeping for 2 minutes")
-                                            await asyncio.sleep(120)
+                                            await asyncio.sleep(5)
         except Exception as e:
             logger.error(e)
 
