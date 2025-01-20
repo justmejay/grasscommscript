@@ -130,6 +130,9 @@ async def connect_to_wss(user_id):
 
 async def main():
     #find user_id on the site in conlose localStorage.getItem('userId') (if you can't get it, write allow pasting)
+    logger.info("Forked from ashtrobe/grasswoex")
+    logger.info("Modified by justmejay")
+    logger.info("Grass Community Edition Script v.1.0")
     _user_id = input('Please Enter your user ID: ')
     await connect_to_wss(_user_id)
 
