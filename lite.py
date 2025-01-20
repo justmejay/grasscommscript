@@ -25,8 +25,7 @@ async def connect_to_wss(user_id):
     logger.info(device_id)
     while True:
         try:
-            #await asyncio.sleep(random.randint(1, 10) / 10) 
-            await asyncio.sleep(random.randint(1, 10)) 
+            await asyncio.sleep(random.randint(1, 10) / 10)
             custom_headers = {
                 "User-Agent": random_user_agent,
                 "Origin": "chrome-extension://lkbnfiajjmbhnfledhphioinpickokdi"
@@ -99,7 +98,7 @@ async def connect_to_wss(user_id):
                                             "body": response_body
                                         }
                                     }
-                                    logger.debug(httpreq_response)
+                                    #logger.debug(httpreq_response)
                                     await websocket.send_json(httpreq_response)
                             
                                     while True:
@@ -110,7 +109,7 @@ async def connect_to_wss(user_id):
                                             "data": {}
                                         }
                                         #logger.debug(send_ping)
-                                        logger.debug("PING SENT")
+                                        #logger.debug("PING SENT")
                                         await websocket.send_json(send_ping)
                                 
                                         response_ping = await websocket.receive()
@@ -124,7 +123,7 @@ async def connect_to_wss(user_id):
                                             }
                                             logger.debug("PING SUCCESS!")
                                             await websocket.send_json(pong_response)
-                                            await asyncio.sleep(5)
+                                            await asyncio.sleep(5,20)
         except Exception as e:
             logger.error(e)
 
