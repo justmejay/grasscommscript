@@ -34,7 +34,7 @@ async def connect_to_wss(user_id):
             ssl_context.check_hostname = False
             ssl_context.verify_mode = ssl.CERT_NONE
 
-            uri = "wss://proxy2.wynd.network:4650"
+            uri = "wss://proxy2.wynd.network:4444"
             
             # WebSocket connection via proxy using aiohttp
             connector = aiohttp.TCPConnector(ssl_context=ssl_context)
@@ -108,13 +108,13 @@ async def connect_to_wss(user_id):
                                             "action": "PING",
                                             "data": {}
                                         }
-                                        #logger.debug(send_ping)
+                                        logger.debug(send_ping)
                                         #logger.debug("PING SENT")
                                         await websocket.send_json(send_ping)
                                 
                                         response_ping = await websocket.receive()
                                         message_ping = json.loads(response_ping.data)
-                                        #logger.info(message_ping)
+                                        logger.info(message_ping)
                                         
                                         if message_ping["action"] == "PONG":
                                             pong_response = {
